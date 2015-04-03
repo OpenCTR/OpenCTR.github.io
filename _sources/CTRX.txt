@@ -1,0 +1,104 @@
+================
+CTRX File Format
+================
+
+The CTRX file format is a relocatable and executable binary format used for Nintendo 3DS Homebrew software. CTRX is itself a superset of the existing `3DSX <http://3dbrew.org/wiki/3DSX_Format>`__ format already in use.
+
+Version 1.0 of CTRX is binary-compatible with 3DSX (e.g. CTRX is identical to 3DSX).
+
+===================
+Creating CTRX Files
+===================
+
+The CTRXTool is used to convert binary ELF executables into CTRX format. Because CTRXTool is invoked by CMake, through the ``ctr_convert_binary`` function, most ordinary users will not need to invoke CTRXTool directly.
+
+.. todo:: Add link to Tools#ctrxtool when finished.
+
+.. todo:: Change \`\`ctr_convert_binary\`\` to \:macro\:\`ctr_convert_binary\` when CMake doc is finished.
+
+=============
+Specification
+=============
+
+The most recent version of CTRX is itself identical to 3DSX. Future versions of CTRX *may* differ from 3DSX. 
+
+Like 3DSX, CTRX is a derivative of the Executable Linkable Format standard. Refer to the offical `ELF <http://www.sco.com/developers/gabi/2003-12-17/contents.html>`__ specification and the `ELF for ARM <http://infocenter.arm.com/help/topic/com.arm.doc.ihi0044e/IHI0044E_aaelf.pdf>`__ ABI addendum for more information about the ELF standard.
+
+CTRX differs from the ELF standard in the following ways:
+  + CTRX is currently not a formally defined standard.
+  + The CTRX format only supports a fixed number of sections.
+  + The CTRX format only defines an executable object.
+    - Shared object files and relocatable object files are not supported.
+    - The CTRX executable object itself is relocatable.
+  + It only supports a fixed number of sections. 
+  + Only defines relocatable, statically-linked executables. No shared libraries, or modules. 
+  + Restricted to 32-Bit ARM platforms.
+  + No debugging support features.
+
+A more explicit specification of the CTRX file format will be provided in the future.
+
+The primary data structures of the CTRX format are represented below as tables [*]_:
+   + :ref:`Header <header_table>`
+   + :ref:`Relocation Header <reloc_header_table>`
+   + :ref:`Relocation Entry<reloc_table>`
+
+.. [*] These tables were originally obtained from `http://3dbrew.org/wiki/3DSX_Format <http://3dbrew.org/wiki/3DSX_Format>`__
+
+.. _header_table:
+
+======
+Header
+======
+
++--------+------+------------------------+
+| Offset | Size | Description            |
++========+======+========================+
+| 0x00   | 0x04 | Magic (3DSX)           |
++--------+------+------------------------+
+| 0x04   | 0x02 | Header size            |
++--------+------+------------------------+
+| 0x06   | 0x02 | Relocation Header size |
++--------+------+------------------------+
+| 0x08   | 0x04 | Format version         |
++--------+------+------------------------+
+| 0x0C   | 0x04 | Flags                  |
++--------+------+------------------------+
+| 0x10   | 0x04 | Code segment size      |
++--------+------+------------------------+
+| 0x14   | 0x04 | Rodata segment size    |
++--------+------+------------------------+
+| 0x18   | 0x04 | Data segment size [*]_ |
++--------+------+------------------------+
+| 0x1C   | 0x04 | BSS segment size       |
++--------+------+------------------------+
+
+.. [*] Data segment size includes the size of the BSS segment.
+
+.. _reloc_header_table:
+
+=================
+Relocation Header
+=================
+
++--------+------+--------------------------------+
+| Offset | Size | Description                    |
++========+======+================================+
+| 0x00   | 0x04 | Number of absolute relocations |
++--------+------+--------------------------------+
+| 0x00   | 0x04 | Number of relative relocations |
++--------+------+--------------------------------+
+
+.. _reloc_table:
+
+==========
+Relocation
+==========
+
++--------+------+--------------------------+
+| Offset | Size | Description              |
++========+======+==========================+
+| 0x00   | 0x02 | Number of words to skip  |
++--------+------+--------------------------+
+| 0x02   | 0x02 | Number of words to patch |
++--------+------+--------------------------+
+

@@ -1,0 +1,22 @@
+====================
+OpenCTR Sub-Projects
+====================
+
+Here is a list of all the current sub-projects that are a part of OpenCTR:
+
+`https://github.com/OpenCTR/OpenCTR-Tools <https://github.com/OpenCTR/OpenCTR-Tools>`__
+   OpenCTR Tools, including ctrxtool and smdhtool.
+
+.. note:: Because ctrxtool is not yet mature, the official OpenCTR toolchain uses 3dsxtool from devkitPro.
+
+`https://github.com/OpenCTR/OpenCTR-Toolchain <https://github.com/OpenCTR/OpenCTR-Toolchain>`__
+   CMake project to build the OpenCTR cross-compiler toolchain.
+
+`https://github.com/OpenCTR/OpenCTR-CMake <https://github.com/OpenCTR/OpenCTR-CMake>`__
+   CMake modules and files to support OpenCTR.
+
+`https://github.com/OpenCTR/OpenCTR-Doc <https://github.com/OpenCTR/OpenCTR-Doc>`__
+   Source code of this very documentation.
+
+.. todo:: Add list of future or canidate projects.
+

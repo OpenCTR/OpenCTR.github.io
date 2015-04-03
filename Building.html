@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Building OpenCTR from source &mdash; OpenCTR</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="OpenCTR" href="index.html" />
+    <link rel="next" title="Using CMake with OpenCTR" href="CMake.html" />
+    <link rel="prev" title="OpenCTR Sub-Projects" href="Components.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner">
+        <a href="index.html">
+          <img class="logo" src="_static/logo.svg" alt="Logo"/>
+        </a>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Components.html">OpenCTR Sub-Projects</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="CMake.html">Using CMake with OpenCTR</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="building-openctr-from-source">
+<h1>Building OpenCTR from source</h1>
+<p>This page is for users who wish to download and build OpenCTR from source. Normal users should download a pre-built binary at <a class="reference internal" href="Releases.html"><em>Releases</em></a>.</p>
+</div>
+<div class="section" id="prerequisites">
+<h1>Prerequisites</h1>
+<dl class="docutils">
+<dt>The following dependencies must be installed before building OpenCTR from source:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.cmake.org/">CMake</a> - A cross-platform, open-source build system.</li>
+<li><a class="reference external" href="https://www.python.org/">Python</a> - A general-purpose, interpreted high-level programming language.</li>
+<li><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> - A python tool for generating beautiful documentation.</li>
+<li><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a> - The defacto tool for documenting C/C++ APIs.</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="optional-dependencies">
+<h2>Optional Dependencies</h2>
+<dl class="docutils">
+<dt>OpenCTR has the following optional, but not required, dependencies:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.python.org/">Python</a> - A general-purpose, interpreted high-level programming language.</li>
+<li><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> - A python tool for generating beautiful documentation.</li>
+<li><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a> - The defacto tool for documenting C/C++ APIs.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="compiler">
+<h2>Compiler</h2>
+<dl class="docutils">
+<dt>When building OpenCTR from downloaded source code, you will need to have a working C/C++ compiler installed. Naturally which compiler you need depends on which platform you are using:</dt>
+<dd><ul class="first last simple">
+<li>Windows users need to download and install <a class="reference external" href="http://www.mingw.org/">MinGW</a> and <a class="reference external" href="http://www.mingw.org/wiki/msys">MSYS</a>. Users who prefer not to use the command line may also install Visual C++ Express.</li>
+<li>Mac OS X users should install XCode from the App Store (and preferabbly the command-line tools addon package).</li>
+<li>Linux/BSD users just need to install the basic GCC suite (e.g. <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span></code>)</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="building">
+<h1>Building</h1>
+<p>The latest release of OpenCTR can be found at <a class="reference internal" href="Releases.html"><em>Releases</em></a>. Alternatively, the latest development source code can be cloned from the GitHub repository at <a class="reference external" href="https://github.com/OpenCTR/OpenCTR">https://github.com/OpenCTR/OpenCTR</a>.</p>
+<p>Even when building and installing OpenCTR from source, remember to follow the <a class="reference internal" href="GettingStarted.html#post-setup"><span>Post Setup</span></a> instructions.</p>
+<p>When building from source, will install to the directory pointed to by <strong>CTR_ROOT</strong>, which must be set as either a CMake variable (e.g. <code class="docutils literal"><span class="pre">-DCTR_ROOT=/opt/OpenCTR</span></code>) or as an environment variable. If <strong>CTR_ROOT</strong> is not set, CMake will report an error configuring OpenCTR.</p>
+<p>It is <em>strongly</em> recommended to build OpenCTR using the GNU Make or <a class="reference external" href="http://martine.github.io/ninja/">Ninja</a> generators. Using a Visual Studio or XCode generator is strongly discouraged, and any build failures are entirely the users responsibility.</p>
+<p>After configuring, run <code class="docutils literal"><span class="pre">make</span></code> or <code class="docutils literal"><span class="pre">ninja</span></code> and wait. When we say &#8220;<em>this build takes a long time</em>&#8221;, we mean it could take several hours to finish.</p>
+</div>
+<div class="section" id="packaging">
+<h1>Packaging</h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section is for package maintainers only.</p>
+</div>
+<p>OpenCTR binary and source packages are generated using CPack.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Currently only does TBZ2 and ZIP packages. NSIS and Mac PKGs are forthcoming.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Components.html">OpenCTR Sub-Projects</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="CMake.html">Using CMake with OpenCTR</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+    </div>
+  </body>
+</html>

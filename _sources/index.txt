@@ -1,0 +1,119 @@
+=======
+OpenCTR
+=======
+
+Free and Open Source SDK for the Nintendo 3DS.
+
+========
+Overview
+========
+
+The OpenCTR project is a community developed effort to develop a free and open-souce software development kit for developing homebrew software for the Nintendo 3DS. 
+
+OpenCTR is itself an umbrella wrapper for several projects. Many of these sub-projects depend on another project, or else were specifically designed to integrate into an OpenCTR project. Because of these components interact with each other, it makes since to have specific functionality be a part of a separate but clearly defined sub-module, with OpenCTR being, not mostly one project, but the sum of all of its sub projects.
+
+Because OpenCTR is not intended to be a monolithic architecture, it makes sense that the documentation for it should similarly be separated into groups.
+
+===========
+User Guides
+===========
+
+Guides for new and intermediate-level users of OpenCTR.
+
+.. toctree::
+   :hidden:
+
+   Introduction
+   GettingStarted
+   Features
+   Releases
+   FAQ
+   Glossary
+
+:doc:`Introduction`
+   A basic introduction to OpenCTR.
+
+:doc:`GettingStarted`
+   Discusses how to get OpenCTR up-and-running, by downloading and installing the latest release.
+
+:doc:`Features`
+   Features of OpenCTR.
+
+:doc:`Releases`
+   OpenCTR Releases. Packages may be downloaded as pre-built binaries or as source code.
+
+:doc:`FAQ`
+   Frequently Asked Questions about OpenCTR.
+
+:doc:`Glossary`
+   Glossary of terms used by OpenCTR.
+
+================
+Developer Guides
+================
+
+Guides (and guidelines) for the people who know or want to know how to work with the OpenCTR source code.
+
+.. toctree::
+   :hidden:
+
+   Components
+   Building
+   CMake
+   StyleGuides
+   Toolchain
+   Tools
+   libctr
+   CTRX
+
+:doc:`Components`
+   List of OpenCTR Sub-projects.
+
+:doc:`Building`
+   Guide to building OpenCTR from source code.
+
+:doc:`CMake`
+   CMake is the official build system used by OpenCTR.
+
+:doc:`StyleGuides`
+   Style Guides used for OpenCTR.
+
+:doc:`Toolchain`
+   GCC/Clang cross-compiler toolchain used for OpenCTR.
+
+:doc:`Tools`
+   Tools used in OpenCTR.
+
+:doc:`libctr`
+   Basic introduction to the offical OpenCTR library.
+
+:doc:`CTRX`
+   File format of choice for Nintendo 3DS homebrew.
+
+=======
+License
+=======
+
+.. toctree::
+   :hidden:
+
+   GPL
+   FDL
+
+OpenCTR is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+OpenCTR is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+See :doc:`here </GPL>` for a copy of the GNU General Public License.
+
+The OpenCTR documenation is free documentation: you can copy, distribute and/or modify it under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. 
+
+See :doc:`here </FDL>` for a copy of the GNU Free Documentation License.
+
+==================
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

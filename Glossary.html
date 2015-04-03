@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Glossary &mdash; OpenCTR</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="OpenCTR" href="index.html" />
+    <link rel="next" title="OpenCTR Sub-Projects" href="Components.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="FAQ.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner">
+        <a href="index.html">
+          <img class="logo" src="_static/logo.svg" alt="Logo"/>
+        </a>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="FAQ.html">Frequently Asked Questions</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Components.html">OpenCTR Sub-Projects</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="glossary">
+<h1>Glossary</h1>
+<dl class="glossary docutils">
+<dt id="term-toolchain">Toolchain</dt>
+<dd>A collection of tools designed to compile human-readable source code
+into machine-readable and platform-specific binary code.</dd>
+<dt id="term-c">C</dt>
+<dd>Programming Language originally created by Denis in 19XX. One of the
+most popular programming languages of all time, it is also one of
+the most influential. C++, Java, Javascript, and Python all inherit
+from the syntax, if not the style, of C. The most recent ISO standard
+of C was released in 2011, and is often refered to as C11. Indisputably
+the king of systems and embedded development, C is the primary language
+used by OpenCTR projects.</dd>
+<dt id="term-2">C++</dt>
+<dd>Extension of <a class="reference internal" href="#term-c"><span class="xref std std-term">C</span></a> designed to add Object-Oriented features. Because
+all valid C code is also valid C++, software compatible with both C and
+C++ will often refer to both as C/C++. More widely known than C in
+most mainstream development, C++ is not suitable for developing the
+system level programming that makes up OpenCTR, due to its runtime
+requirements, heavier overhead, and greater binary size. Still perfectly
+okay to use C++ when developing your own applications though. An
+object-oriented wrapper for libctr is forthcoming.</dd>
+<dt id="term-gcc">GCC</dt>
+<dd>The GNU Compiler Collection (originally called the GNU C Compiler) has
+been the defacto cross-compiler of choice for the past 20+ years.
+Although GCC has faced competition in recent years, in the form of
+<a class="reference internal" href="#term-clang"><span class="xref std std-term">LLVM/Clang</span></a>, GCC remains the most powerful and versatile compiler for
+many architectures and platforms. Hence its status as the default
+cross-compiler for OpenCTR.</dd>
+<dt id="term-clang">Clang</dt>
+<dd>A relative new-comer to the world of compilers, LLVM was originally
+the Low Level Virtual Machine developed by XXX as a university
+thesis project. Since then, LLVM has been backed by Apple and Google,
+among others, and developed into a C/C++ compiler capable of rivaling
+GCC. Having risen to the same heights that it took GCC 25 years to
+reach in 7 years, LLVM/Clang is positioned to become the new compiler
+of choice very soon. Because it (currently) generates code that is
+slightly slower than code produced by GCC, LLVM/Clang is not the
+default compiler in OpenCTR, although that may change in the future.
+The OpenCTR Toolchain does <em>not</em> build LLVM/Clang by default, as that
+would just add even more waiting time to a process that already takes
+one hour to complete. Including LLVM/Clang in OpenCTR requires building
+the OpenCTR Toolchain from source, with the <code class="docutils literal"><span class="pre">ENABLE_CLANG</span></code> option
+enabled.</dd>
+<dt id="term-ctrx">CTRX</dt>
+<dd>File format for Nintendo 3DS homebrew. Able to be executed on any
+homebrew-enabled Nintendo 3DS console, as well as the <a class="reference internal" href="#term-citra"><span class="xref std std-term">Citra</span></a>
+and <a class="reference internal" href="#term-dmoo"><span class="xref std std-term">3dmoo</span></a> emulators. Current version of CTRX is identical to
+<a class="reference external" href="http://3dbrew.org/wiki/3DSX_Format">3DSX</a>.</dd>
+<dt id="term-citra">Citra</dt>
+<dd>Cross-platform Nintendo 3DS emulator (without stereoscopic 3D support
+though). Written in Qt4. More actively developed than <a class="reference internal" href="#term-dmoo"><span class="xref std std-term">3dmoo</span></a>, but
+not as well integrated with OpenCTR at this time. Also known as
+Citra-emu.</dd>
+<dt id="term-dmoo">3dmoo</dt>
+<dd>Alternative to <a class="reference internal" href="#term-citra"><span class="xref std std-term">Citra</span></a>. Less support for commercial games, but more
+hardware accurate emulation.</dd>
+</dl>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="FAQ.html">Frequently Asked Questions</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="Components.html">OpenCTR Sub-Projects</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+    </div>
+  </body>
+</html>

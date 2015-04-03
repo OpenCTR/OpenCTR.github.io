@@ -1,0 +1,14 @@
+========
+Features
+========
+
+Here is a list of all things you will gain by using OpenCTR:
+
+* Cross-platform toolkit.
+* Modern build system, powered by CMake.
+* Option of using the traditional hosted GCC cross-compiler, or the new LLVM Clang cross-compiling target. 
+* Heavily optimized backend, with compile and link-time optimizations enabled.
+* Support from a friendly and helpful community.
+* Opportunity to develop more than just games (over-priced games at that). OpenCTR provides developers with the tools to create all kinds of software, including games, utilities, media players, e-book readers, and so much more. The sky's the limit.
+* Opportunity to learn about many new topics in programming, and about computers in general.
+

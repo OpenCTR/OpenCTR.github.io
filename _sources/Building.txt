@@ -1,0 +1,58 @@
+============================
+Building OpenCTR from source
+============================
+
+This page is for users who wish to download and build OpenCTR from source. Normal users should download a pre-built binary at :doc:`Releases`.
+
+=============
+Prerequisites
+=============
+
+The following dependencies must be installed before building OpenCTR from source:
+  + `CMake <http://www.cmake.org/>`__ - A cross-platform, open-source build system.
+  + `Python <https://www.python.org/>`__ - A general-purpose, interpreted high-level programming language.
+  + `Sphinx <http://sphinx-doc.org/>`__ - A python tool for generating beautiful documentation.
+  + `Doxygen <http://www.stack.nl/~dimitri/doxygen/>`__ - The defacto tool for documenting C/C++ APIs.
+
+---------------------
+Optional Dependencies
+---------------------
+
+OpenCTR has the following optional, but not required, dependencies:
+  + `Python <https://www.python.org/>`__ - A general-purpose, interpreted high-level programming language.
+  + `Sphinx <http://sphinx-doc.org/>`__ - A python tool for generating beautiful documentation.
+  + `Doxygen <http://www.stack.nl/~dimitri/doxygen/>`__ - The defacto tool for documenting C/C++ APIs.
+
+--------
+Compiler
+--------
+
+When building OpenCTR from downloaded source code, you will need to have a working C/C++ compiler installed. Naturally which compiler you need depends on which platform you are using:
+  + Windows users need to download and install `MinGW <http://www.mingw.org/>`__ and `MSYS <http://www.mingw.org/wiki/msys>`__. Users who prefer not to use the command line may also install Visual C++ Express.
+  + Mac OS X users should install XCode from the App Store (and preferabbly the command-line tools addon package).
+  + Linux/BSD users just need to install the basic GCC suite (e.g. ``sudo apt-get install build-essential``)
+
+========
+Building
+========
+
+The latest release of OpenCTR can be found at :doc:`Releases`. Alternatively, the latest development source code can be cloned from the GitHub repository at `https://github.com/OpenCTR/OpenCTR <https://github.com/OpenCTR/OpenCTR>`__.
+
+Even when building and installing OpenCTR from source, remember to follow the :ref:`post-setup` instructions.
+
+When building from source, will install to the directory pointed to by **CTR_ROOT**, which must be set as either a CMake variable (e.g. ``-DCTR_ROOT=/opt/OpenCTR``) or as an environment variable. If **CTR\_ROOT** is not set, CMake will report an error configuring OpenCTR.
+
+It is *strongly* recommended to build OpenCTR using the GNU Make or `Ninja <http://martine.github.io/ninja/>`__ generators. Using a Visual Studio or XCode generator is strongly discouraged, and any build failures are entirely the users responsibility.
+
+After configuring, run ``make`` or ``ninja`` and wait. When we say "*this build takes a long time*\ ", we mean it could take several hours to finish.
+
+=========
+Packaging
+=========
+
+.. note:: This section is for package maintainers only.
+
+OpenCTR binary and source packages are generated using CPack.
+
+.. todo:: Currently only does TBZ2 and ZIP packages. NSIS and Mac PKGs are forthcoming.
+

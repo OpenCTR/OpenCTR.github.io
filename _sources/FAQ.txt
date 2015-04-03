@@ -1,0 +1,22 @@
+==========================
+Frequently Asked Questions
+==========================
+
+Collection of expected questions newcommers may have about OpenCTR, and noteworthy question from the community.
+
+.. todo:: Better layout of Q&A in FAQs.
+
+* Question: I dont know how to install OpenCTR for my platform. Can you help me?
+* Answer: Sorry, no. Our developers are too busy with feature requests and bug fixes as-is. If you need help for anything specific to *you*, you are encouraged to ask someone in the community for help, at 4dsDev for example.
+
+* Question: Can I contribute to OpenCTR in any way.
+* Answer: **Absolutely**. If you are a developer, we need your help developing. If you are a translator, we need your help translating. If you are an artist, we need your help creating art. The AUTHORS page lists who is responsible for what in OpenCTR. Several authors may have their PayPal and/or BitCoin addresses listed. You are perfectly free to donate any amount of money to them, if you wish.
+
+* Question: Where can I contact you guys?
+* Answer: Look at the AUTHORS page and decide who would be the most appropriate member to contact. Please remember that we are all human beings, and busy human beings at that. We will delete any pestering and nagging attempts to bother us.
+
+* Question: There's already devkitARM and ctrulib. Why did you guys feel the need to create OpenCTR?
+* Answer: First, let us assure you that we harbor no hard feelings towards devkitARM, or ctrulib. We mention in ACKNOWLEDGEMENTS that devkitARM and ctrulib were of enormous influence in our own work. We envison OpenCTR becoming an alternative to the use of devkitARM and ctrulib, but not a replacement. OpenCTR simply has different goals and priorities from either project, not to say our goals and priorities are any better or worse than theirs. We also wanted to create a more unified project. devkitARM and ctrulib are developed separetely from each other. All OpenCTR projects share compatibility.
+
+
+

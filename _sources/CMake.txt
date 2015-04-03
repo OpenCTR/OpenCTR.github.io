@@ -1,0 +1,10 @@
+========================
+Using CMake with OpenCTR
+========================
+
+CMake is the offical build system used by OpenCTR.
+
+Although CMake does natively support cross-platform development, enabling cross-compiling is a little trickier.
+
+Because of the extensive use of exports and policies, it is *HIGHLY* recommended to have CMake 3.0.0 or later installed. If you are unable to upgrade CMake on your current machine, prebuilt binaries can be downloaded from the CMake home page. Just remember to add the extracted directory to the front of your ``PATH``.
+
