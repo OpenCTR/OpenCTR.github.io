@@ -6,12 +6,15 @@ Credits
 
 List of people, events, abstract concepts, etc, that have enabled OpenCTR to come into existance.
 
-This is a list of indirect contributors to OpenCTR. For a list of direct contributors, see :doc:`Authors`.
+This is a list of indirect contributors to OpenCTR. 
+For a list of direct contributors, see :doc:`Authors`.
 
 
 * `Smealum`_ - Indisputably the Grandfather (and `mentor`_) of the Nintendo 3DS Homebrew scene, none of OpenCTR would ever have been possible without his work.
 
 * `Dave Murphy`_ - Developer of devkitARM and libnds - both are predecessors to much of the work in OpenCTR.
+
+* `fincs`_ - For creating the 3DSX format (`according to smealum`_).
 
 * `Binutils`_ - Assembler and Linker used by the OpenCTR toolchain.
 
@@ -49,4 +52,8 @@ This is a list of indirect contributors to OpenCTR. For a list of direct contrib
 .. _C: http://en.wikipedia.org/wiki/C_(programming_language)
 
 .. _3DBrew: http://3dbrew.org/wiki/Main_Page
+
+.. _fincs: https://github.com/fincs
+
+.. _according to smealum: http://smealum.net/ninjhax/
 

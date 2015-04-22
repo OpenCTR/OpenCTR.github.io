@@ -1,18 +1,18 @@
-============================
-Getting Started with OpenCTR
-============================
+===============
+Getting Started
+===============
 
 Your guide to downloading OpenCTR and getting it up and running. 
 
-First, download the latest version of OpenCTR from :doc:`Releases` for your platform. Users interested in building OpenCTR from source should read the :doc:`Building` guide. 
+First, download the latest version of OpenCTR from :doc:`Releases` for your platform. 
+Users interested in building OpenCTR from source should read the :doc:`Building` guide. 
 
-If you downloaded a zip or tar archive, :ref:`setup`. If you downloaded a package installer (NSIS .exe, Mac .pkg, Debian .dpkg, etc) than you can skip to :ref:`post-setup`. 
+If you downloaded a zip or tar archive, read `Setup`_. 
+If you downloaded a package installer, then skip to `Post Setup`_. 
 
-.. _setup:
-
-===========================
-Setting up the Installation
-===========================
+=====
+Setup
+=====
 
 After extracting OpenCTR, you should end up with a directory named OpenCTR-X.Y.Z, where X.Y.Z is the release version number (e.x. `OpenCTR-1.2.3.zip` should give you `OpenCTR-1.2.3/`).
 
@@ -20,9 +20,7 @@ First, if you want to be able to install updates without needing to change any s
 
 Move the OpenCTR directory, whatever it is named, to where-ever you want it to reside. If you want OpenCTR to be in `Program Files`, put `OpenCTR` inside `C:\Program Files` (so you should end up with `C:\Program Files\OpenCTR`). Linux/UNIX users (including OSX users) should probably place the OpenCTR directory somewhere like `/usr/local/OpenCTR` or `/opt/OpenCTR`.
 
-Now that OpenCTR has been installed to your filesystem, you need to :ref:`setup you environment <post-setup>` to use it.
-
-.. _post-setup:
+Now that OpenCTR has been installed to your filesystem, read `Post Setup`_ for information about setting up your environment to use OpenCTR.
 
 ==========
 Post Setup
@@ -30,7 +28,7 @@ Post Setup
 
 After OpenCTR has been installed, several environment settings must be changed before OpenCTR can be used automatically (without manual setup with each use). 
 
-OpenCTR software (including apps and games) are built using CMake. The details of using CMake with OpenCTR are described in :doc:`CMake </CMake>`. 
+OpenCTR software (including apps and games) are built using CMake. The details of using CMake with OpenCTR are described in :doc:`CMake`. 
 
 But for CMake to be able to find and use the OpenCTR toolchain automatically, it needs a reference to where OpenCTR is installed. There are two ways to accomplish this:
   1. Adding `OpenCTR/bin` to the `PATH` environment variable.

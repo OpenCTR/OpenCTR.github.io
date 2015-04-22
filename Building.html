@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Building OpenCTR from source &mdash; OpenCTR</title>
+    <title>Building OpenCTR &mdash; OpenCTR</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="OpenCTR" href="index.html" />
-    <link rel="next" title="Using CMake with OpenCTR" href="CMake.html" />
-    <link rel="prev" title="OpenCTR Sub-Projects" href="Components.html" /> 
+    <link rel="next" title="CMake" href="CMake.html" />
+    <link rel="prev" title="OpenCTR Sub-Projects" href="Projects.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner">
@@ -37,76 +37,229 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="Components.html">OpenCTR Sub-Projects</a>
+        «&#160;&#160;<a href="Projects.html">OpenCTR Sub-Projects</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="CMake.html">Using CMake with OpenCTR</a>&#160;&#160;»
+        <a href="CMake.html">CMake</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="building-openctr-from-source">
-<h1>Building OpenCTR from source</h1>
-<p>This page is for users who wish to download and build OpenCTR from source. Normal users should download a pre-built binary at <a class="reference internal" href="Releases.html"><em>Releases</em></a>.</p>
+  <div class="section" id="building-openctr">
+<h1>Building OpenCTR</h1>
+<p>This page is for users who wish to download and build OpenCTR from source.
+Normal users should download a pre-built binary at <a class="reference internal" href="Releases.html"><em>Releases</em></a>.</p>
+<p>Even when building and installing OpenCTR from source, remember to add the runtime install
+directory to the PATH variable, or to create a new environment variable named
+<code class="docutils literal"><span class="pre">CTR_ROOT</span></code> which contains the root install directory for OpenCTR.</p>
 </div>
-<div class="section" id="prerequisites">
-<h1>Prerequisites</h1>
-<dl class="docutils">
-<dt>The following dependencies must be installed before building OpenCTR from source:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://www.cmake.org/">CMake</a> - A cross-platform, open-source build system.</li>
-<li><a class="reference external" href="https://www.python.org/">Python</a> - A general-purpose, interpreted high-level programming language.</li>
-<li><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> - A python tool for generating beautiful documentation.</li>
-<li><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a> - The defacto tool for documenting C/C++ APIs.</li>
+<div class="section" id="getting-started">
+<h1>Getting Started</h1>
+<p>To build the OpenCTR SDK from source, the following prerequisites must be installed:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.cmake.org/">CMake</a> &gt;= 3.0.0</li>
+<li><a class="reference external" href="https://www.python.org/">Python</a> 3</li>
+<li>GCC 4.8+ or Clang 3.3+</li>
+<li>The GNU build system (<a class="reference external" href="https://www.gnu.org/software/autoconf/">autoconf</a>, <a class="reference external" href="https://www.gnu.org/software/automake/">automake</a>, <a class="reference external" href="https://www.gnu.org/software/libtool/">libtool</a>, <a class="reference external" href="https://www.gnu.org/software/m4/">m4</a>)</li>
+<li><a class="reference external" href="http://git-scm.com">Git</a></li>
+<li><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> (Only if building documentation)</li>
 </ul>
-</dd>
-</dl>
-<div class="section" id="optional-dependencies">
-<h2>Optional Dependencies</h2>
-<dl class="docutils">
-<dt>OpenCTR has the following optional, but not required, dependencies:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="https://www.python.org/">Python</a> - A general-purpose, interpreted high-level programming language.</li>
-<li><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> - A python tool for generating beautiful documentation.</li>
-<li><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a> - The defacto tool for documenting C/C++ APIs.</li>
+<p>Follow the guide for your platform:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
 </ul>
-</dd>
-</dl>
+<p>After everything is ready, proceed to <a class="reference internal" href="#building">Building</a> for instructions on building and installing OpenCTR.</p>
+<div class="section" id="windows">
+<h2>Windows</h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add screenshots to help Windows users.</p>
 </div>
-<div class="section" id="compiler">
-<h2>Compiler</h2>
-<dl class="docutils">
-<dt>When building OpenCTR from downloaded source code, you will need to have a working C/C++ compiler installed. Naturally which compiler you need depends on which platform you are using:</dt>
-<dd><ul class="first last simple">
-<li>Windows users need to download and install <a class="reference external" href="http://www.mingw.org/">MinGW</a> and <a class="reference external" href="http://www.mingw.org/wiki/msys">MSYS</a>. Users who prefer not to use the command line may also install Visual C++ Express.</li>
-<li>Mac OS X users should install XCode from the App Store (and preferabbly the command-line tools addon package).</li>
-<li>Linux/BSD users just need to install the basic GCC suite (e.g. <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span></code>)</li>
-</ul>
-</dd>
-</dl>
+<div class="section" id="requirements">
+<h3>Requirements</h3>
+<p>Download and install <a class="reference external" href="http://www.cmake.org/">CMake</a> from <a class="reference external" href="http://www.cmake.org/download/">http://www.cmake.org/download/</a>.</p>
+<p>Download and install <a class="reference external" href="https://www.python.org/">Python</a> from <a class="reference external" href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a>.</p>
+<p>Download and install <a class="reference external" href="http://git-scm.com">Git</a> from <a class="reference external" href="http://git-scm.com/download/win">http://git-scm.com/download/win</a>.</p>
+<p>Optionally, download the latest <code class="docutils literal"><span class="pre">ninja-win.zip</span></code> from <a class="reference external" href="https://github.com/martine/ninja/releases">https://github.com/martine/ninja/releases</a>.
+Extract it, and place <code class="docutils literal"><span class="pre">ninja.exe</span></code> in your PATH. Ninja is not <em>required</em> but it is <em>recommended</em>,
+because it produces much faster build times.</p>
+</div>
+<div class="section" id="mingw-get">
+<h3>mingw-get</h3>
+<p>On Windows we&#8217;ll be using mingw-get to install several dependencies.</p>
+<p>Download <a class="reference external" href="http://sourceforge.net/projects/mingw/files/mingw-get-setup.exe">mingw-get-setup.exe</a> from <a class="reference external" href="http://sourceforge.net/projects/mingw/files/">http://sourceforge.net/projects/mingw/files/</a>.
+Open mingw-get-setup.exe and install it.</p>
+<p>After MinGW has been installed, you need to make sure that <code class="docutils literal"><span class="pre">C:\MinGW\bin</span></code> has been added to your
+<code class="docutils literal"><span class="pre">PATH</span></code>. Open a command prompt (WinKey+R - Type &#8220;cmd&#8221; - Hit Enter) and enter the following command:</p>
+<div class="highlight-batch"><div class="highlight"><pre>mingw-get --help
+</pre></div>
+</div>
+<p>If you get a message displaying help information for mingw-get, the test succeeded and MinGW is
+installed and ready for use. Otherwise, you still need to add MinGW to your PATH. This can be
+dangerous if done improperly, so you should find a guide for your specific version of Windows.</p>
+<p>Afterwards, install several dependencies:</p>
+<div class="highlight-batch"><div class="highlight"><pre>mingw-get update
+mingw-get upgrade
+mingw-get install mingw-get
+mingw-get install gcc
+mingw-get install g++
+mingw-get install msys
+mingw-get install msys-m<span class="m">4</span>
+mingw-get install msys-wget
+mingw-get install msys-patch
+mingw-get install msys-autoconf
+mingw-get install msys-automake
+mingw-get install msys-bash
+mingw-get install msys-bison
+mingw-get install msys-flex
+mingw-get install msys-make
+mingw-get install msys-libtool
+mingw-get install msys-gawk
+mingw-get install msys-binutils
+</pre></div>
+</div>
+<p>To build the OpenCTR documentation, <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> must be installed. Follow the setup instructions
+<a class="reference external" href="http://sphinx-doc.org/install.html#windows-install-python-and-sphinx">here</a>.</p>
+</div>
+</div>
+<div class="section" id="mac-os-x">
+<h2>Mac OS X</h2>
+<div class="section" id="id1">
+<h3>Requirements</h3>
+<p>Download and install <a class="reference external" href="http://www.cmake.org/">CMake</a> from <a class="reference external" href="http://www.cmake.org/download/">http://www.cmake.org/download/</a>.</p>
+<p>Download and install <a class="reference external" href="https://www.python.org/">Python</a> from <a class="reference external" href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a>.</p>
+<p>Download and install <a class="reference external" href="http://git-scm.com">Git</a> from <a class="reference external" href="http://git-scm.com/download/win">http://git-scm.com/download/win</a>.</p>
+<p>Alternatively, all 3 dependencies can be installed with Brew:</p>
+<div class="highlight-bash"><div class="highlight"><pre>brew install cmake <span class="c"># or cmake30</span>
+brew install python3
+brew install git
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="#brew">Brew</a> for more on installing Homebrew.</p>
+</div>
+<div class="section" id="xcode">
+<h3>Xcode</h3>
+<p>Xcode 5 or later is required. Xcode can be installed from the Mac App Store on Snow Leopard (10.6) or later.</p>
+<p>After installing Xcode, several command-line tools must be installed. Open Terminal, and enter:</p>
+<div class="highlight-bash"><div class="highlight"><pre>xcode-select --install
+</pre></div>
+</div>
+<p>You should get a popup window asking you to install the developer tools.
+Click &#8220;Install&#8221; to download and install the Xcode Command Line Tools.</p>
+<p>If you get an error saying that the command line tools are already installed, you can ignore it.
+It just means that you have already installed the Xcode command line tools.</p>
+</div>
+<div class="section" id="brew">
+<h3>Brew</h3>
+<p>Install <a class="reference external" href="http://brew.sh/">Brew.sh</a> - the missing package manager for OS X.</p>
+<p>After Homebrew has been installed, use it to automatically fetch and install several required
+dependencies for building OpenCTR.</p>
+<div class="highlight-bash"><div class="highlight"><pre>brew install autoconf
+brew install automake
+brew install libtool
+brew install pkg-config
+brew install bash
+brew install bison
+brew install cloog
+brew install doxygen
+brew install gawk
+brew install gcc
+brew install gettext
+brew install gmp
+brew install mpfr
+brew install mpc
+brew install isl
+brew install sphinx
+brew install wget
+brew install ninja
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="linux">
+<h2>Linux</h2>
+<p>Your specific instructions depend on which Linux distro you are running.
+If your distro is not listed here, consult the documentation for your distros package manager,
+and install all of the dependencies list listed above.</p>
+<p>If your distribution <em>is</em> listed here though, just enter the commands listed, and you should be all set.</p>
+<p>It is also recommended that users install a terminal emulator (GNOME Terminal, Konsole, Terminology, mxrvt, xterm)
+or an IDE (Code::Blocks, Codelite, Anjuta, Eclipse CDT). This may not be neccessary, as your distro may already
+come with a terminal emulator pre-installed.</p>
+<div class="section" id="debian-ubuntu">
+<h3>Debian/Ubuntu</h3>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install build-essential cmake autoconf automake m4 libtool <span class="se">\</span>
+                     pkg-config bison doxygen gawk gcc g++ gettext <span class="se">\</span>
+                     python3 python3-sphinx wget ninja-build git-core
+</pre></div>
+</div>
+</div>
+<div class="section" id="fedora-red-hat">
+<h3>Fedora/Red Hat</h3>
+<div class="highlight-bash"><div class="highlight"><pre>sudo yum install python3-devel freetype-devel gcc gcc-c++ cmake autoconf <span class="se">\</span>
+                 automake make m4 libtool pkgconfig bison doxygen gawk <span class="se">\</span>
+                 gettext python3 python-sphinx wget ninja-build git
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="building">
 <h1>Building</h1>
-<p>The latest release of OpenCTR can be found at <a class="reference internal" href="Releases.html"><em>Releases</em></a>. Alternatively, the latest development source code can be cloned from the GitHub repository at <a class="reference external" href="https://github.com/OpenCTR/OpenCTR">https://github.com/OpenCTR/OpenCTR</a>.</p>
-<p>Even when building and installing OpenCTR from source, remember to follow the <a class="reference internal" href="GettingStarted.html#post-setup"><span>Post Setup</span></a> instructions.</p>
-<p>When building from source, will install to the directory pointed to by <strong>CTR_ROOT</strong>, which must be set as either a CMake variable (e.g. <code class="docutils literal"><span class="pre">-DCTR_ROOT=/opt/OpenCTR</span></code>) or as an environment variable. If <strong>CTR_ROOT</strong> is not set, CMake will report an error configuring OpenCTR.</p>
-<p>It is <em>strongly</em> recommended to build OpenCTR using the GNU Make or <a class="reference external" href="http://martine.github.io/ninja/">Ninja</a> generators. Using a Visual Studio or XCode generator is strongly discouraged, and any build failures are entirely the users responsibility.</p>
-<p>After configuring, run <code class="docutils literal"><span class="pre">make</span></code> or <code class="docutils literal"><span class="pre">ninja</span></code> and wait. When we say &#8220;<em>this build takes a long time</em>&#8221;, we mean it could take several hours to finish.</p>
+<div class="section" id="clone-the-github-repo">
+<h2>1. Clone the GitHub Repo</h2>
+<div class="highlight-bash"><div class="highlight"><pre>git clone https://github.com/OpenCTR/OpenCTR.git OpenCTR
+<span class="nb">cd </span>OpenCTR
+</pre></div>
 </div>
-<div class="section" id="packaging">
-<h1>Packaging</h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This section is for package maintainers only.</p>
 </div>
-<p>OpenCTR binary and source packages are generated using CPack.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Currently only does TBZ2 and ZIP packages. NSIS and Mac PKGs are forthcoming.</p>
+<div class="section" id="create-the-build-dir">
+<h2>2. Create the build dir</h2>
+<p>CMake works best with out-of-source builds, so create a separate build directory.</p>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir build
+<span class="nb">cd </span>build
+</pre></div>
+</div>
+</div>
+<div class="section" id="generate-build-files-using-cmake">
+<h2>3. Generate build files using CMake</h2>
+<p>Use CMake to generate the build files for downloading, configuring, building, and
+installing the OpenCTR sub-projects. It is recommended to use a &#8220;Makefile&#8221; or
+&#8220;Ninja&#8221; generator for CMake; it increases the chances of a successful build.</p>
+<p>CMake uses the value of <code class="docutils literal"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> to decide where to install OpenCTR.
+OpenCTR installs everything to a sub-directory named <code class="docutils literal"><span class="pre">OpenCTR</span></code>. For example, if
+<code class="docutils literal"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> is set to <code class="docutils literal"><span class="pre">$HOME/Install</span></code>, then OpenCTR will be installed
+to <code class="docutils literal"><span class="pre">$HOME/Install/OpenCTR</span></code>.</p>
+<div class="highlight-bash"><div class="highlight"><pre>cmake .. -G <span class="s2">&quot;Ninja&quot;</span> -DCMAKE_BUILD_TYPE<span class="o">=</span>Release -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local
+</pre></div>
+</div>
+<p>CMake will check to make sure all dependencies are satisfied. If a required package could not be found,
+CMake will exit with an error message. Just fix whatever the problem was, and re-run CMake.</p>
+<p>One of the benefits of out-of-source builds is that removing generated build files and cruft
+can be done by simply running <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">*</span></code>. <strong>DO NOT RUN THIS IN AN IN-SOURCE BUILD</strong>. It will
+delete all your source files if you run it from inside the source dir. But if the build dir
+is separate from the source dir, the entire build dir can be deleted to completely wipe out
+all traces of the previous build.</p>
+</div>
+<div class="section" id="build-openctr">
+<h2>4. Build OpenCTR</h2>
+<p>After CMake has finished generating the build files, it is time to build OpenCTR.</p>
+<div class="highlight-bash"><div class="highlight"><pre>ninja
+</pre></div>
+</div>
+<p>Wait for OpenCTR to finish building. This can take awhile, up to several hours depending on your machine.</p>
+</div>
+<div class="section" id="install-openctr">
+<h2>5. Install OpenCTR</h2>
+<p>Assuming Step 4 was successful, it is now time to install OpenCTR system-wide.</p>
+<div class="highlight-bash"><div class="highlight"><pre>ninja install
+</pre></div>
+</div>
+<p>Be sure to add <code class="docutils literal"><span class="pre">OpenCTR/bin</span></code> to your PATH.</p>
 </div>
 </div>
 
@@ -115,11 +268,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="Components.html">OpenCTR Sub-Projects</a>
+        «&#160;&#160;<a href="Projects.html">OpenCTR Sub-Projects</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="CMake.html">Using CMake with OpenCTR</a>&#160;&#160;»
+        <a href="CMake.html">CMake</a>&#160;&#160;»
         </p>
 
       </div>

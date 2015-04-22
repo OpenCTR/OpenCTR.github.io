@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3DSX File Format &mdash; OpenCTR</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="OpenCTR" href="index.html" />
+    <link rel="next" title="GNU General Public License" href="GPL.html" />
+    <link rel="prev" title="Tools" href="Tools.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner">
+        <a href="index.html">
+          <img class="logo" src="_static/logo.svg" alt="Logo"/>
+        </a>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Tools.html">Tools</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="GPL.html">GNU General Public License</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="dsx-file-format">
+<h1>3DSX File Format</h1>
+<p>The 3DSX file format is a relocatable and executable binary format used for Nintendo 3DS Homebrew software.</p>
+<p>For more information about the 3DSX format, see <a class="reference external" href="http://3dbrew.org/wiki/3DSX_Format">http://3dbrew.org/wiki/3DSX_Format</a>.</p>
+</div>
+<div class="section" id="creating-3dsx-files">
+<h1>Creating 3DSX Files</h1>
+<p>3dsxtool is used to convert binary ELF executables into 3DSX format.
+Because 3dsxtool is invoked by CMake, through the <code class="docutils literal"><span class="pre">ctr_convert_binary</span></code> function,
+most ordinary users will not need to invoke 3dsxtool directly.
+For more about 3dsxtool, see <a class="reference internal" href="Tools.html"><em>Tools</em></a>.</p>
+</div>
+<div class="section" id="specification">
+<h1>Specification</h1>
+<p>3DSX is not a formally defined specification.</p>
+<p>3DSX is a derivative of the Executable Linkable Format standard.
+Refer to the offical <a class="reference external" href="http://www.sco.com/developers/gabi/2003-12-17/contents.html">ELF</a> specification and the <a class="reference external" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0044e/IHI0044E_aaelf.pdf">ELF for ARM</a> ABI addendum for more information about the ELF standard.</p>
+<dl class="docutils">
+<dt>3DSX differs from the ELF standard in the following ways:</dt>
+<dd><ul class="first last simple">
+<li>3DSX is currently not a formally defined standard.</li>
+<li>The 3DSX format only supports a fixed number of sections.</li>
+<li>The 3DSX format only defines an executable object.
+- Shared object files and relocatable object files are not supported.
+- The 3DSX executable object itself is relocatable.</li>
+<li>It only supports a fixed number of sections.</li>
+<li>Only defines relocatable, statically-linked executables. No shared libraries, or modules.</li>
+<li>Restricted to 32-Bit ARM platforms.</li>
+<li>No debugging support features.</li>
+</ul>
+</dd>
+</dl>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="Tools.html">Tools</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="GPL.html">GNU General Public License</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+    </div>
+  </body>
+</html>
