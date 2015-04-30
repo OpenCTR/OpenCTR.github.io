@@ -2,7 +2,7 @@
 OpenCTR
 =======
 
-OpenCTR is a free and open-source, cross-platform SDK and Toolchain for developing homebrew 
+OpenCTR is a free and open-source, cross-platform SDK for developing homebrew 
 for the Nintendo 3DS.
 
 ===========
@@ -27,7 +27,8 @@ Guides for new and intermediate-level users of OpenCTR.
    A basic introduction to OpenCTR.
 
 :doc:`Getting Started </GettingStarted>`
-   Discusses how to get OpenCTR up-and-running, by downloading and installing the latest release.
+   Discusses how to get OpenCTR up-and-running, by downloading and installing 
+   the latest release.
 
 :doc:`Releases`
    OpenCTR Releases.
@@ -51,7 +52,8 @@ Guides for new and intermediate-level users of OpenCTR.
 Developer Guides
 ================
 
-Guides (and guidelines) for the people who know or want to know how to work with the OpenCTR source code.
+Guides (and guidelines) for the people who know or want to know how to work 
+with the OpenCTR source code.
 
 .. toctree::
    :hidden:
